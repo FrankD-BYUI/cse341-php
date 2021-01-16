@@ -1,0 +1,28 @@
+/*colors: https://coolors.co/a4243b-d8c99b-d8973c-bd632f-273e47*/
+
+body {
+  background-color: #D8C99B;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #D8973C;
+  text-align: center;
+}
+
+.nav {
+  background-color: #D8973C;
+}
+
+.footer p {
+  margin-bottom: 0;
+  color: #273E47;
+}
+
+.container img {
+  max-width: 90%;
+}
