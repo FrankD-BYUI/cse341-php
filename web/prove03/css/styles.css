@@ -1,0 +1,53 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  
+}
+
+body {
+  padding-bottom: 60px;
+}
+
+.navbar a{
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.navbar i {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card {
+  margin: 1em;
+  min-width: 18rem;
+  max-width: 20%;
+  text-align: center;
+  padding: 1em;
+  background-color: grey;
+  border-radius: 10px;
+}
+
+.card img{
+  border-radius: 10px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cart {
+  display: flex;
+  padding: 15px;
+  margin: 0;
+}
+
+.cart:hover {
+  text-decoration: none;
+}

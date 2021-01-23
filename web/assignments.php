@@ -15,7 +15,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
 
 <h2>Week 3:</h2>
 <ul>
-  <li><a href="#"></a></li>
+  <li>Teach03: <a href="/teach03/index.php">PHP Form handeling</a></li>
+  <li>Prove03: <a href="/prove03/index.php">Shopping Cart</a>
 </ul>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
