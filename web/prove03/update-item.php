@@ -16,7 +16,7 @@ if (!isset($thingIndex[$item]) || !isset($_SESSION['cart'])) {
   $_SESSION['message'] = $message;
   header('Location: /prove03/cart.php');
   exit;
-} 
+}
 
 $cart = $_SESSION['cart'];
 

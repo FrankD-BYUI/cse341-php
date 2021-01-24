@@ -6,7 +6,6 @@ session_start();
 require_once '../prove03/utilities.php';
 
 $cartCount = 0;
-$cart;
 if (isset($_SESSION['cart'])) {
   $cart = ($_SESSION['cart']);
 }
@@ -34,17 +33,14 @@ include $_SERVER['DOCUMENT_ROOT'] . '/prove03/common/header.php'; ?>
 </div>
 
 <div class="container">
-    <h2>Shipping Information:</h2>
-    <?php 
-    echo "<p>$inputAddress</p>"; 
-    if (!is_null($inputAddress2)) {
-      echo "<p>$inputAddress2</p>";
-    }
-    echo "<p>$inputCity, $inputState $inputZip</p>"
-    ?>
+  <h2>Shipping Information:</h2>
+  <?php
+  echo "<p>$inputAddress</p>";
+  if (!is_null($inputAddress2)) {
+    echo "<p>$inputAddress2</p>";
+  }
+  echo "<p>$inputCity, $inputState $inputZip</p>"
+  ?>
 </div>
 
-<?php 
-  unset($_SESSION['cart']);
-?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/prove03/common/footer.php'; ?>s
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/prove03/common/footer.php'; ?>

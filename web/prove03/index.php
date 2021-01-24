@@ -1,23 +1,23 @@
-<?php 
-  session_start();
-  //session_unset();
-  //session_destroy();
+<?php
+session_start();
+//session_unset();
+//session_destroy();
 
-  $cartCount = 0;
-  if (isset($_SESSION['cart'])) {
-    $cart = ($_SESSION['cart']);
-    foreach($cart as $item => $count) {
-      $cartCount += $count;
-    }
+$cartCount = 0;
+if (isset($_SESSION['cart'])) {
+  $cart = ($_SESSION['cart']);
+  foreach ($cart as $item => $count) {
+    $cartCount += $count;
   }
+}
 ?>
 <?php $pageTitle = "The Thing Store | Browse";
 include $_SERVER['DOCUMENT_ROOT'] . '/prove03/common/header.php'; ?>
 
 <h1>Welcome to the Thing Store!</h1>
 
-<?php 
-if(isset($_SESSION['message'])) {
+<?php
+if (isset($_SESSION['message'])) {
   echo $_SESSION['message'];
   $_SESSION['message'] = null;
 }

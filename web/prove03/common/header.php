@@ -16,11 +16,11 @@
       <nav class="navbar">
         <a class="navbar-brand" href="/prove03/">The Things Store</a>
         <a class="navbar-text cart" href="/prove03/cart.php"><i class="bi bi-cart4"></i>
-        <?php 
-          if(isset($cartCount)) {
+          <?php
+          if (isset($cartCount)) {
             echo "($cartCount)";
           }
-        ?></a>
+          ?></a>
       </nav>
     </div>
   </header>
