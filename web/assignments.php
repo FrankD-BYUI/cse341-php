@@ -19,4 +19,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
   <li>Prove03: <a href="/prove03/index.php">Shopping Cart</a>
 </ul>
 
+<h2>Week 4:</h2>
+<ul>
+  <li>Teach04: <a href="https://github.com/FrankD-BYUI/cse341-php/blob/master/db/teach04.sql" target="_blank">PHP Form handeling</a></li>
+  <li>Prove04: <a href="https://github.com/FrankD-BYUI/cse341-php/blob/master/db/myDb.sql" target="_blank">DB Setup</a>
+</ul>
+
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
