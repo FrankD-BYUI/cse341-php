@@ -21,8 +21,8 @@ $stmt = $connection->prepare($sql);
 $stmt->bindValue(':search', $search, PDO::PARAM_STR);
 $stmt->execute();
 $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
-var_dump($response);
-// $stmt->closeCursor();
+//var_dump($response);
+$stmt->closeCursor();
 
 // $message = "";
 // if ($stmt->rowCount() == 0) {

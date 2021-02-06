@@ -4,7 +4,7 @@ function connectDB() {
     $dbUrl = getenv('DATABASE_URL');
 
     $dbopts = parse_url($dbUrl);
-    var_dump($dbopts);
+    //var_dump($dbopts);
 
     $dbHost = $dbopts["host"];
     $dbPort = $dbopts["port"];
