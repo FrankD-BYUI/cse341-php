@@ -1,5 +1,5 @@
 <?php
-
+echo "<script>console.log('you got this far')</script>";
 require 'db.php';
 
 $id = "";
