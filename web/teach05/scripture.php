@@ -1,27 +1,27 @@
 <?php
-// require 'db.php';
+require 'db.php';
 
-// $id = "";
-// if(isset($_GET['id'])){
-//   $id = filter_input(INPUT_GET,'id',FILTER_SANITIZE_NUMBER_INT);
-// }
+$id = "";
+if(isset($_GET['id'])){
+  $id = filter_input(INPUT_GET,'id',FILTER_SANITIZE_NUMBER_INT);
+}
 
-// $connection = connectDB();
+$connection = connectDB();
 
-// $message = "";
-// if($id) {
-//   $sql = "SELECT * from scriptures WHERE id = :id";
+$message = "";
+if($id) {
+  $sql = "SELECT * from scriptures WHERE id = :id";
 
-//   $stmt = $connection->prepare($sql);
+  $stmt = $connection->prepare($sql);
 
-//     $stmt->bindValue(':id', $id, PDO::PARAM_INT);
-//     $stmt->execute();
-//     $scripture = $stmt->fetch(PDO::FETCH_ASSOC);
-//     $stmt->closeCursor();
-// } else {
-//     $message = "No results found.";
-//     die();
-// }
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+    $stmt->execute();
+    $scripture = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+} else {
+    $message = "No results found.";
+    die();
+}
 
 
 ?>

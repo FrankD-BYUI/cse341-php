@@ -8,7 +8,6 @@ if (isset($_GET['search'])) {
 }
 
 $connection = connectDB();
-//var_dump($connection);
 
 $sql = 'SELECT * from scriptures';
 
@@ -22,16 +21,12 @@ if ($search) {
 }
 $stmt->execute();
 $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//var_dump($response);
 $stmt->closeCursor();
 
-// $message = "";
-// if ($stmt->rowCount() == 0) {
-//   $message = "No results found.";
-// }
-
-
-?>
+$message = "";
+if ($stmt->rowCount() == 0) {
+  $message = "No results found.";
+}?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,13 +46,11 @@ $stmt->closeCursor();
   <h1>Scripture Resources</h1>
   <ul>
     <?php
-    /*foreach($response as $scripture) {
+    foreach($response as $scripture) {
       echo "<li><a href='/scripture.php?id=$scripture[id]'><strong>$scripture[book] $scripture[chapter]:$scripture[verse]</strong></a></li>";
-    }*/
-    ?>
+    }?>
   </ul>
-  <h4 style="color: red"><?php //echo $message;
-                          ?></h4>
+  <h4 style="color: red"><?php echo $message;?></h4>
 </body>
 
 </html>
