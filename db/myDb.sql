@@ -79,3 +79,9 @@ INSERT INTO inventory (name, description) VALUES ('Dumpster Behind the Movie The
 INSERT INTO orders (shippingAddress, userID) VALUES ('12 Privet Dr.', 2);
 INSERT INTO orderItems (orderID, invID, qty) VALUES (1, 1, 1);
 INSERT INTO orderItems (orderID, invID, qty) VALUES (1, 4, 2);
+
+-- SELECT * FROM orders
+--   inner join orderItems on orders.orderid = orderitems.orderid
+--   inner join inventory on orderitems.invid = inventory.invid
+--   inner join users on orders.userid = users.userid
+--   where users.userid = 2;
