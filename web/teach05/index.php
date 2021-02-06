@@ -47,9 +47,9 @@
   <h1>Scripture Resources</h1>
   <ul>
   <?php
-    foreach($response as $scripture) {
+    /*foreach($response as $scripture) {
       echo "<li><a href='/scripture.php?id=$scripture[id]'><strong>$scripture[book] $scripture[chapter]:$scripture[verse]</strong></a></li>";
-    }
+    }*/
   ?>
   </ul>
   <h4 style="color: red"><?php echo $message;?></h4>
