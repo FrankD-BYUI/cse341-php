@@ -57,7 +57,7 @@ CREATE TABLE users (
 DROP TABLE IF EXISTS orders;
 CREATE TABLE orders (
   orderID SERIAL NOT NULL PRIMARY KEY,
-  userID INT NOT NULL REFERENCES users(userID)
+  userID INT NOT NULL REFERENCES users(userID),
   shippingAddress VARCHAR NOT NULL,
   orderDate TIMESTAMP NOT NULL DEFAULT NOW()
 );
@@ -70,9 +70,12 @@ CREATE TABLE orderItems (
   PRIMARY KEY(orderID, invID)
 );
 
-INSERT INTO users (fName, lName, email, userPW) VALUES ('Bob', 'Ross', 'Bob@gmail.com', 'trees');
+INSERT INTO users (fName, lName, email, userPW) VALUES ('Bob', 'Ross', 'Bob@gmail.com', 'H4ppy');
 INSERT INTO users (fName, lName, email, userPW) VALUES ('Harry', 'Potter', 'HPotter@Hogwarts.edu', 'H3dgw1g');
-INSERT INTO inventory (name, description) VALUES ('Numbus 2000', 'Fastest model yet!');
-INSERT INTO inventory (name, description) VALUES ('Numbus 2001', 'Fastester model yet!');
+INSERT INTO inventory (name, description) VALUES ('Wet Dog', 'This candle perfectly captures the aroma of a wet dog.');
+INSERT INTO inventory (name, description) VALUES ('Old Car', 'You know that smell that older cars have? Somewhere between decomposing plastic and long forgotten fries? That''s this candle.');
+INSERT INTO inventory (name, description) VALUES ('Belly Button Funk', 'Have you ever stuck your finger in your belly button and then smelled it? It''s not great, but here it is as a candle.');
+INSERT INTO inventory (name, description) VALUES ('Dumpster Behind the Movie Theater', 'Rancid soda and soggy popcorn, name a more iconic duo.');
 INSERT INTO orders (shippingAddress, userID) VALUES ('12 Privet Dr.', 2);
-insert INTO orderItems (orderID, invID, qty) VALUES (1, 1, 1);
+INSERT INTO orderItems (orderID, invID, qty) VALUES (1, 1, 1);
+INSERT INTO orderItems (orderID, invID, qty) VALUES (1, 4, 2);
