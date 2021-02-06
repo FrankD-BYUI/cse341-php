@@ -48,10 +48,10 @@ function getOrderDetails($orderid)
 $user = getUserDetails(2);
 $orders = getOrders(2);
 
-echo 'user:';
-var_dump($user);
-echo 'orders:';
-var_dump($orders);
+// echo 'user:';
+// var_dump($user);
+// echo 'orders:';
+// var_dump($orders);
 
 $pageTitle = "Silly Scents | My Account";
 include $_SERVER['DOCUMENT_ROOT'] . '/prove05/common/header.php';
@@ -85,7 +85,7 @@ if ($orders) {
 
     echo "<tr>
         <td>$order[orderid]</td>
-        <td>date('m/d/Y',$order[orderdate])</td>
+        <td>" . date('m/d/Y',$order['orderdate']) ."</td>
         <td>$orderItems</td>
         <td>$orderPrice</td>
         <td>
