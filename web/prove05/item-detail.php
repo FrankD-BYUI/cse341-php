@@ -20,7 +20,7 @@ $response = $stmt->fetch(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
 
 $pageTitle = "Silly Scents | $response[name]";
-include '/prove05/common/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/prove05/common/header.php';
 ?>
 
 <h1><?php echo $response['name']; ?></h1>
@@ -28,4 +28,4 @@ include '/prove05/common/header.php';
 <p><?php echo $item['description']; ?></p>
 <a href='#' class='btn btn-primary'>Add to Cart</a>
 
-<?php include 'prove05/common/footer.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . 'prove05/common/footer.php'; ?>

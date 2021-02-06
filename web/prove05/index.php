@@ -10,7 +10,7 @@ $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
 
 $pageTitle = "Silly Scents | Home";
-include '/prove05/common/header.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/prove05/common/header.php';
 ?>
 
 <h1>Silly Scents Candles</h1>
@@ -29,4 +29,4 @@ include '/prove05/common/header.php';
   } ?>
 </div>
 
-<?php include 'prove05/common/footer.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . 'prove05/common/footer.php'; ?>
