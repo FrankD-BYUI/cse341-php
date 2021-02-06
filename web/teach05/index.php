@@ -8,6 +8,7 @@ if (isset($_GET['search'])) {
 }
 
 $connection = connectDB();
+var_dump($connection);
 
 $sql = 'SELECT * from scriptures';
 
@@ -20,12 +21,13 @@ $stmt = $connection->prepare($sql);
 $stmt->bindValue(':search', $search, PDO::PARAM_STR);
 $stmt->execute();
 $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$stmt->closeCursor();
+var_dump($response);
+// $stmt->closeCursor();
 
-$message = "";
-if ($stmt->rowCount() == 0) {
-  $message = "No results found.";
-}
+// $message = "";
+// if ($stmt->rowCount() == 0) {
+//   $message = "No results found.";
+// }
 
 
 ?>
