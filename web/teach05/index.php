@@ -1,31 +1,31 @@
 <?php
 
-require 'db.php';
+// require 'db.php';
 
-$search = "";
-if(isset($_GET['search'])){
-  $search = filter_input(INPUT_GET,'search',FILTER_SANITIZE_STRING);
-}
+// $search = "";
+// if(isset($_GET['search'])){
+//   $search = filter_input(INPUT_GET,'search',FILTER_SANITIZE_STRING);
+// }
 
-$connection = connectDB();
+// $connection = connectDB();
 
-$sql = 'SELECT * from scriptures';
+// $sql = 'SELECT * from scriptures';
 
-if($search) {
-  $sql = "SELECT * from scriptures WHERE book = :search";
-}
+// if($search) {
+//   $sql = "SELECT * from scriptures WHERE book = :search";
+// }
 
-$stmt = $connection->prepare($sql);
+// $stmt = $connection->prepare($sql);
 
-$stmt->bindValue(':search', $search, PDO::PARAM_STR);
-$stmt->execute();
-$response = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$stmt->closeCursor();
+// $stmt->bindValue(':search', $search, PDO::PARAM_STR);
+// $stmt->execute();
+// $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// $stmt->closeCursor();
 
-$message = "";
-if($stmt->rowCount() == 0) {
-  $message = "No results found.";
-}
+// $message = "";
+// if($stmt->rowCount() == 0) {
+//   $message = "No results found.";
+// }
 
 
 ?>
@@ -38,6 +38,7 @@ if($stmt->rowCount() == 0) {
   <title>Scriptures</title>
 </head>
 <body>
+<?phpecho "<script>console.log('you got this far')</script>";?>
   <form action="/" method="get">
     <label for="search"></label>
     <input type="search" name="search" id="search">
