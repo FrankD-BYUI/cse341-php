@@ -80,7 +80,7 @@ if ($orders) {
 
     foreach ($orderDetails as $item) {
       $orderItems += $item['qty'];
-      $orderPrice += $item['price'];
+      $orderPrice += $item['price'] * $item['qty'];
     }
 
     echo "<tr>
