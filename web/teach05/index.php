@@ -8,7 +8,7 @@ if (isset($_GET['search'])) {
 }
 
 $connection = connectDB();
-var_dump($connection);
+//var_dump($connection);
 
 $sql = 'SELECT * from scriptures';
 
