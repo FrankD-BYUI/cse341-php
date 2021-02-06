@@ -25,7 +25,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/prove05/common/header.php';
 
 <h1><?php echo $response['name']; ?></h1>
 <img class='card-img-top' src='/prove05/images/default-candle.png' alt='candle'>
-<p><?php echo $item['description']; ?></p>
+<p><?php echo $response['description']; ?></p>
 <a href='#' class='btn btn-primary'>Add to Cart</a>
 
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/prove05/common/footer.php'; ?>
