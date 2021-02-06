@@ -47,7 +47,7 @@ if ($stmt->rowCount() == 0) {
   <ul>
     <?php
     foreach($response as $scripture) {
-      echo "<li><a href='/scripture.php?id=$scripture[id]'><strong>$scripture[book] $scripture[chapter]:$scripture[verse]</strong></a></li>";
+      echo "<li><a href='/teach05/scripture.php?id=$scripture[id]'><strong>$scripture[book] $scripture[chapter]:$scripture[verse]</strong></a></li>";
     }?>
   </ul>
   <h4 style="color: red"><?php echo $message;?></h4>
