@@ -17,16 +17,16 @@ function getUserDetails($userid)
 function getOrders($userid)
 {
   $connection = connectDB();
-  $sql2 = 'SELECT orders.orderid, orders.shippingaddress, orders.orderdate,
+  $sql = 'SELECT orders.orderid, orders.shippingaddress, orders.orderdate,
             CONCAT(users.fname, \' \', users.lname) as username 
           FROM orders
           inner join users on orders.userid = users.userid
           WHERE users.userid = :userid';
-  $stmt2 = $connection->prepare($sql2);
-  $stmt2->bindValue(':userid', $userid, PDO::PARAM_INT);
-  $stmt2->execute();
-  $orders = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-  $stmt2->closeCursor();
+  $stmt = $connection->prepare($sql);
+  $stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
+  $stmt->execute();
+  $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $stmt->closeCursor();
   return $orders;
 }
 
@@ -74,7 +74,7 @@ if ($orders) {
     </tr>';
 
   foreach ($orders as $order) {
-    $orderDetails = getOrderDetails($order);
+    $orderDetails = getOrderDetails($order['orderid']);
     $orderItems = 0;
     $orderPrice = 0.00;
 
