@@ -17,8 +17,9 @@ if ($search) {
 }
 
 $stmt = $connection->prepare($sql);
-
-$stmt->bindValue(':search', $search, PDO::PARAM_STR);
+if ($search) {
+  $stmt->bindValue(':search', $search, PDO::PARAM_STR);
+}
 $stmt->execute();
 $response = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //var_dump($response);
