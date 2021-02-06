@@ -25,4 +25,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
   <li>Prove04: <a href="https://github.com/FrankD-BYUI/cse341-php/blob/master/db/myDb.sql" target="_blank">DB Setup</a>
 </ul>
 
+<h2>Week 5:</h2>
+<ul>
+  <li>Teach05: <a href="#">Viewing DB data using PHP</a></li>
+  <li>Prove04: <a href="/prove04/index.php">PHP Data Access</a>
+</ul>
+
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
