@@ -11,26 +11,26 @@ $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
 
-$sql = 'SELECT orders.orderid, orders.shippingaddress, orders.orderdate,
+$sql2 = 'SELECT orders.orderid, orders.shippingaddress, orders.orderdate,
             CONCAT(users.fname, \' \', users.lname) as username 
           FROM orders
           inner join users on orders.userid = users.userid
           WHERE users.userid = :userid';
-$stmt = $connection->prepare($sql);
-$stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
-$stmt->execute();
-$orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$stmt->closeCursor();
+$stmt2 = $connection->prepare($sql2);
+$stmt2->bindValue(':userid', $userid, PDO::PARAM_INT);
+$stmt2->execute();
+$orders = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+$stmt2->closeCursor();
 
-function getOrderDetails($ordernum)
+function getOrderDetails($orderid)
 {
   $connection = connectDB();
   $sql = 'SELECT inventory.name, orderItems.qty, inventory.price 
             FROM orderItems
             inner join inventory on orderitems.invid = inventory.invid
-            WHERE orderItems.orderid = :ordernum';
+            WHERE orderItems.orderid = :orderid';
   $stmt = $connection->prepare($sql);
-  $stmt->bindValue(':ordernum', $ordernum, PDO::PARAM_INT);
+  $stmt->bindValue(':orderid', $orderid, PDO::PARAM_INT);
   $stmt->execute();
   $orderDetails = $stmt->fetchAll(PDO::FETCH_ASSOC);
   $stmt->closeCursor();
