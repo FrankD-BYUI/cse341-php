@@ -38,7 +38,6 @@
   <title>Scriptures</title>
 </head>
 <body>
-<?phpecho "<script>console.log('you got this far')</script>";?>
   <form action="/" method="get">
     <label for="search"></label>
     <input type="search" name="search" id="search">
@@ -52,6 +51,6 @@
     }*/
   ?>
   </ul>
-  <h4 style="color: red"><?php echo $message;?></h4>
+  <h4 style="color: red"><?php //echo $message;?></h4>
 </body>
 </html>
