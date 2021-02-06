@@ -28,4 +28,4 @@ include $_SERVER['DOCUMENT_ROOT'] . '/prove05/common/header.php';
 <p><?php echo $item['description']; ?></p>
 <a href='#' class='btn btn-primary'>Add to Cart</a>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . 'prove05/common/footer.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/prove05/common/footer.php'; ?>

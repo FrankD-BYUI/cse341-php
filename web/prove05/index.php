@@ -29,4 +29,4 @@ include $_SERVER['DOCUMENT_ROOT'] . '/prove05/common/header.php';
   } ?>
 </div>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . 'prove05/common/footer.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/prove05/common/footer.php'; ?>

@@ -93,4 +93,4 @@ SELECT orders.orderid, orders.shippingaddress, orders.orderdate,
 
 SELECT inventory.name, orderItems.qty, inventory.price from orderItems
   inner join inventory on orderitems.invid = inventory.invid
-  WHERE orderItems.orderid = 1;
+  WHERE orderItems.orderid = 2;

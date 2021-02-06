@@ -85,7 +85,7 @@ if ($orders) {
 
     echo "<tr>
         <td>$order[orderid]</td>
-        <td>" . date('m/d/Y',$order['orderdate']) ."</td>
+        <td>" . date('m/d/Y', $order['orderdate']) . "</td>
         <td>$orderItems</td>
         <td>$orderPrice</td>
         <td>
@@ -97,4 +97,4 @@ if ($orders) {
   echo '</table>';
 } ?>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . 'prove05/common/footer.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/prove05/common/footer.php'; ?>
