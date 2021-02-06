@@ -12,7 +12,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 $stmt->closeCursor();
 
 $sql = 'SELECT orders.orderid, orders.shippingaddress, orders.orderdate,
-            CONCAT(user.fname, " ", users.lname) as username 
+            CONCAT(users.fname, " ", users.lname) as username 
           FROM orders
           inner join users on order.userid = users.userid
           WHERE users.userid = :userid';
