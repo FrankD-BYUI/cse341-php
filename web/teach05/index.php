@@ -9,11 +9,11 @@ if (isset($_GET['search'])) {
 
 $connection = connectDB();
 
-// $sql = 'SELECT * from scriptures';
+$sql = 'SELECT * from scriptures';
 
-// if ($search) {
-//   $sql = "SELECT * from scriptures WHERE book = :search";
-// }
+if ($search) {
+  $sql = "SELECT * from scriptures WHERE book = :search";
+}
 
 // $stmt = $connection->prepare($sql);
 
