@@ -1,26 +1,34 @@
 <?php
 require 'db.php';
 
-$connection = connectDB();
+function getUserDetails($userid)
+{
+  $connection = connectDB();
+  $userid = 2;
+  $sql = 'SELECT * from users WHERE userid = :userid';
+  $stmt = $connection->prepare($sql);
+  $stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
+  $stmt->execute();
+  $user = $stmt->fetch(PDO::FETCH_ASSOC);
+  $stmt->closeCursor();
+  return $user;
+}
 
-$userid = 2;
-$sql = 'SELECT * from users WHERE userid = :userid';
-$stmt = $connection->prepare($sql);
-$stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
-$stmt->execute();
-$user = $stmt->fetch(PDO::FETCH_ASSOC);
-$stmt->closeCursor();
-
-$sql2 = 'SELECT orders.orderid, orders.shippingaddress, orders.orderdate,
+function getOrders($userid)
+{
+  $connection = connectDB();
+  $sql2 = 'SELECT orders.orderid, orders.shippingaddress, orders.orderdate,
             CONCAT(users.fname, \' \', users.lname) as username 
           FROM orders
           inner join users on orders.userid = users.userid
           WHERE users.userid = :userid';
-$stmt2 = $connection->prepare($sql2);
-$stmt2->bindValue(':userid', $userid, PDO::PARAM_INT);
-$stmt2->execute();
-$orders = $stmt2->fetchAll(PDO::FETCH_ASSOC);
-$stmt2->closeCursor();
+  $stmt2 = $connection->prepare($sql2);
+  $stmt2->bindValue(':userid', $userid, PDO::PARAM_INT);
+  $stmt2->execute();
+  $orders = $stmt2->fetchAll(PDO::FETCH_ASSOC);
+  $stmt2->closeCursor();
+  return $orders;
+}
 
 function getOrderDetails($orderid)
 {
@@ -36,6 +44,14 @@ function getOrderDetails($orderid)
   $stmt->closeCursor();
   return $orderDetails;
 }
+
+$user = getUserDetails(2);
+$orders = getOrders(2);
+
+echo 'user:';
+var_dump($user);
+echo 'orders:';
+var_dump($orders);
 
 $pageTitle = "Silly Scents | My Account";
 include $_SERVER['DOCUMENT_ROOT'] . '/prove05/common/header.php';
