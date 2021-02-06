@@ -14,7 +14,7 @@ $stmt->closeCursor();
 $sql = 'SELECT orders.orderid, orders.shippingaddress, orders.orderdate,
             CONCAT(users.fname, " ", users.lname) as username 
           FROM orders
-          inner join users on order.userid = users.userid
+          inner join users on orders.userid = users.userid
           WHERE users.userid = :userid';
 $stmt = $connection->prepare($sql);
 $stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
