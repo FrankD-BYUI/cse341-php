@@ -7,7 +7,7 @@ if (isset($_GET['search'])) {
   $search = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_STRING);
 }
 
-// $connection = connectDB();
+$connection = connectDB();
 
 // $sql = 'SELECT * from scriptures';
 
@@ -40,7 +40,7 @@ if (isset($_GET['search'])) {
 </head>
 
 <body>
-  <form action="/" method="get">
+  <form action="/teach05/" method="get">
     <label for="search"></label>
     <input type="search" name="search" id="search">
     <input type="submit" value="search" />
