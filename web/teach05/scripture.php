@@ -33,7 +33,6 @@ if($id) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<p>hi</p>
 <body>
     <h1><?php echo "$scripture[book] $scripture[chapter]:$scripture[verse]";?></h1>
     <p>"<?php echo $scripture['content'];?>"</p>

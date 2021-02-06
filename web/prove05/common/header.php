@@ -13,7 +13,7 @@
   <header>
     <ul class="nav nav-tabs">
       <li role="presentation" class="active"><a href="index.php">Home</a></li>
-      <li role="presentation"><a href="assignments.php">Assignments</a></li>
+      <li role="presentation"><a href="#">Cart</a></li>
     </ul>
   </header>
 
