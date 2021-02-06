@@ -2,10 +2,10 @@
 
 require 'db.php';
 
-// $search = "";
-// if (isset($_GET['search'])) {
-//   $search = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_STRING);
-// }
+$search = "";
+if (isset($_GET['search'])) {
+  $search = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_STRING);
+}
 
 // $connection = connectDB();
 
