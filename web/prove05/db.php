@@ -3,6 +3,11 @@
 function connectDB() {
     $dbUrl = getenv('DATABASE_URL');
 
+    if (empty($dbUrl)) {
+        //localhost configuration URL using environmental variable
+        $dbUrl = getenv('HTTP_DATABASE_URL');
+       }
+
     $dbopts = parse_url($dbUrl);
 
     $dbHost = $dbopts["host"];
