@@ -46,7 +46,7 @@ CREATE TABLE users (
   fName VARCHAR NOT NULL,
   lName VARCHAR NOT NULL,
   email VARCHAR NOT NULL,
-  userPW VARCHAR NOT NULL,
+  userPW VARCHAR(60) NOT NULL,
   isAdmin BOOLEAN NOT NULL DEFAULT FALSE
 );
 
@@ -64,8 +64,9 @@ CREATE TABLE orderItems (
   PRIMARY KEY(orderID, invID)
 );
 
-INSERT INTO users (fName, lName, email, userPW) VALUES ('Bob', 'Ross', 'Bob@gmail.com', 'H4ppy');
-INSERT INTO users (fName, lName, email, userPW) VALUES ('Harry', 'Potter', 'HPotter@Hogwarts.edu', 'H3dgw1g');
+INSERT INTO users (fName, lName, email, userPW) VALUES ('Bob', 'Ross', 'Bob@gmail.com', '$2y$10$BqPJz3jlJy0z7.PZL8Q2muLA/yG9BuZ53CGHUN0RRgaGQfoEcP1Bq'); -- PW: H4ppy
+INSERT INTO users (fName, lName, email, userPW) VALUES ('Harry', 'Potter', 'HPotter@Hogwarts.edu', '$2y$10$a6beyCQBofQVk4Q9hejRk.xF6XQ2z527Gbu9npZKbYzqzn7qTBnI.'); -- PW: H3dgw1g
+INSERT INTO users (fName, lName, email, userPW, isAdmin) VALUES ('testAdmin', 'Admin', 'test@admin.com', '$2y$10$S4LrZT.8xqCYcZIikw89Qui.dA7NSEKA7bXUakWhKFh4s95iuRm3O', 't'); -- PW: Admin123
 INSERT INTO inventory (name, description, price) VALUES ('Wet Dog', 'This candle perfectly captures the aroma of a wet dog.', 9.99);
 INSERT INTO inventory (name, description, price) VALUES ('Old Car', 'You know that smell that older cars have? Somewhere between decomposing plastic and long forgotten fries? That''s this candle.', 9.99);
 INSERT INTO inventory (name, description, price) VALUES ('Belly Button Funk', 'Have you ever stuck your finger in your belly button and then smelled it? It''s not great, but here it is as a candle.', 9.99);

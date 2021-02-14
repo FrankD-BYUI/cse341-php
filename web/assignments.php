@@ -31,4 +31,10 @@ include $_SERVER['DOCUMENT_ROOT'] . '/common/header.php'; ?>
   <li>Prove05: <a href="/prove05/index.php">PHP Data Access</a>
 </ul>
 
+<h2>Week 6:</h2>
+<ul>
+  <li>Teach06: <a href="/teach06/index3.php">Linking Databases</a></li>
+  <li>Prove06: <a href="/prove06/index.php">PHP Data Modification</a>
+</ul>
+
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/common/footer.php'; ?>
