@@ -26,6 +26,9 @@
           } ?> </a></li>
       <?php if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) { ?>
         <li role="presentation" <?php if ($active == "account") echo 'class="active"'; ?>><a href="/prove07/account/index.php">Account</a></li>
+        <?php if ($_SESSION['userDetails']['isadmin']) { ?>
+          <li role="presentation" <?php if ($active == "admin") echo 'class="active"'; ?>><a href="/prove07/admin/index.php">Admin</a></li>
+        <?php } ?>
         <li role="presentation"><a href="/prove07/account/index.php?action=logout">Log Out</a></li>
       <?php } else { ?>
         <li role="presentation" <?php if ($active == "login") echo 'class="active"'; ?>><a href="/prove07/account/index.php?action=login">Log In</a></li>

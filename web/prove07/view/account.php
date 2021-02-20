@@ -2,7 +2,7 @@
 $pageTitle = "Silly Scents | My Account";
 $active = "account";
 include '../common/header.php';
-
+//echo var_dump($_SESSION);
 ?>
 
 <h1>Hello <?php echo $user['fname']; ?></h1>

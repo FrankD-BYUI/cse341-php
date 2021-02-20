@@ -57,15 +57,16 @@ body {
   align-items: flex-end;
 }
 
-th, td {
+th,
+td {
   padding: 10px;
 }
 
-.cart tr {
+.table-lines tr {
   border-bottom: #D8973C solid 2px;
 }
 
-.cart tr:last-child {
+.table-lines tr:last-child {
   border-bottom: none;
 }
 

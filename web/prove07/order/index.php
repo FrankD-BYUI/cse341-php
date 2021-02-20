@@ -125,7 +125,7 @@ switch ($action) {
       header("Location: ../account/index?action=login");
       die();
     }
-    
+
     if (is_null($cart) || empty($cart)) {
       header("Location: ./index.php?action=view-cart");
       die();
@@ -141,7 +141,7 @@ switch ($action) {
       header("Location: ../account/index?action=login");
       die();
     }
-    
+
     // make sure there's something in the cart
     if (is_null($cart) || empty($cart)) {
       header("Location: ./index.php?action=view-cart");
@@ -160,7 +160,7 @@ switch ($action) {
 
     echo var_dump($_SESSION);
     $orderid = placeOrder($_SESSION['userDetails']['userid'], $shippingaddress);
-    
+
     foreach ($cart as $invid => $qty) {
       placeOrderItem($orderid, $invid, $qty);
     }

@@ -15,7 +15,7 @@ if (isset($_SESSION['message'])) {
 if (is_null($cart) || empty($cart)) {
   echo '<p>There is nothing in your cart</p>';
 } else { ?>
-  <table class="cart">
+  <table class="table-lines">
     <tr>
       <th>Item:</th>
       <th>Price:</th>
@@ -27,10 +27,9 @@ if (is_null($cart) || empty($cart)) {
     $cartQty = 0;
     foreach ($cart as $itemInCart => $itemQty) {
       foreach ($cartItemDetails as $itemDetails) {
-        if ($itemDetails['invid'] === $itemInCart) { 
+        if ($itemDetails['invid'] === $itemInCart) {
           $cartTotal += $itemDetails['price'] * $itemQty;
-          $cartQty += $itemQty;
-          ?>
+          $cartQty += $itemQty; ?>
           <tr>
             <td><a href="../products/index.php?action=product&invid=<?php echo $itemDetails['invid'] ?>"><?php echo $itemDetails['name'] ?></a></td>
             <td>$<?php echo $itemDetails['price'] * $itemQty ?></td>
@@ -59,7 +58,7 @@ if (is_null($cart) || empty($cart)) {
     } ?>
     <tr>
       <td class="text-right">Total:</td>
-      <td>$<?php echo number_format($cartTotal,2); ?></td>
+      <td>$<?php echo number_format($cartTotal, 2); ?></td>
       <td><?php echo $cartQty; ?></td>
       <td></td>
       <td></td>

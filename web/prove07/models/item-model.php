@@ -35,7 +35,8 @@ function getItemById($invid)
   return $response;
 }
 
-function ItemIdExists($invid) {
+function ItemIdExists($invid)
+{
   $connection = connectDB();
   $sql = 'SELECT invid from inventory WHERE invid = :invid';
   $stmt = $connection->prepare($sql);

@@ -33,10 +33,10 @@ switch ($action) {
     $userpw = filter_input(INPUT_POST, 'userpw', FILTER_SANITIZE_STRING);
 
     if (empty($email) || empty($userpw)) {
-      $_SESSION['message'] = 
-      "<div class='alert alert-danger' role='alert'>" .
-      "All fields are requried, please try again." .
-      "</div>";
+      $_SESSION['message'] =
+        "<div class='alert alert-danger' role='alert'>" .
+        "All fields are requried, please try again." .
+        "</div>";
       include '../view/login.php';
       exit;
     }
@@ -46,15 +46,15 @@ switch ($action) {
     $correctPW = password_verify($userpw, $userDetails['userpw']);
 
     if (!$correctPW) {
-      $_SESSION['message'] = 
-      "<div class='alert alert-danger' role='alert'>" .
-      "Invalid Email or Password." .
-      "</div>";
+      $_SESSION['message'] =
+        "<div class='alert alert-danger' role='alert'>" .
+        "Invalid Email or Password." .
+        "</div>";
       include '../view/login.php';
       exit;
     }
 
-    $_SESSION['message'] = 
+    $_SESSION['message'] =
       "<div class='alert alert-success' role='alert'>" .
       "Log in Successful, Welcome $userDetails[fname]." .
       "</div>";
@@ -78,10 +78,10 @@ switch ($action) {
     //TODO: enforce password constraints
 
     if (empty($fname) || empty($lname) || empty($email) || empty($userpw)) {
-      $_SESSION['message'] = 
-      "<div class='alert alert-danger' role='alert'>" .
-      "All fields are requried, please try again." .
-      "</div>";
+      $_SESSION['message'] =
+        "<div class='alert alert-danger' role='alert'>" .
+        "All fields are requried, please try again." .
+        "</div>";
       include '../view/register.php';
       exit;
     }
@@ -90,16 +90,16 @@ switch ($action) {
     $registrationSuccess = registerUser($fname, $lname, $email, $hashedUserPW);
 
     if ($registrationSuccess) {
-      $_SESSION['message'] = 
-      "<div class='alert alert-success' role='alert'>" .
-      "Registration Successful, Please log in." .
-      "</div>";
+      $_SESSION['message'] =
+        "<div class='alert alert-success' role='alert'>" .
+        "Registration Successful, Please log in." .
+        "</div>";
       include '../view/login.php';
     } else {
-      $_SESSION['message'] = 
-      "<div class='alert alert-danger' role='alert'>" .
-      "Something went wrong, please try again." .
-      "</div>";
+      $_SESSION['message'] =
+        "<div class='alert alert-danger' role='alert'>" .
+        "Something went wrong, please try again." .
+        "</div>";
       include '../view/register.php';
     }
     break;

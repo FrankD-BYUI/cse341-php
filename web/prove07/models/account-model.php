@@ -58,3 +58,18 @@ function registerUser($fname, $lname, $email, $userpw)
   $stmt->closeCursor();
   return $rowsChanged;
 }
+
+function getAllUsers()
+{
+  $connection = connectDB();
+  $sql = 'SELECT userid,
+            email,
+            CONCAT(fname, \' \', lname) as username,
+            isadmin
+          FROM users';
+  $stmt = $connection->prepare($sql);
+  $stmt->execute();
+  $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $stmt->closeCursor();
+  return $users;
+}

@@ -23,7 +23,7 @@ function placeOrderItem($orderid, $invid, $qty)
 {
   $connection = connectDB();
   $sql = 'INSERT INTO orderitems
-  VALUES (:orderid, :invid, :qty)';
+          VALUES (:orderid, :invid, :qty)';
   $stmt = $connection->prepare($sql);
   $stmt->bindValue(':orderid', $orderid, PDO::PARAM_INT);
   $stmt->bindValue(':invid', $invid, PDO::PARAM_INT);
@@ -42,6 +42,21 @@ function getOrders($userid)
           WHERE users.userid = :userid';
   $stmt = $connection->prepare($sql);
   $stmt->bindValue(':userid', $userid, PDO::PARAM_INT);
+  $stmt->execute();
+  $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $stmt->closeCursor();
+  return $orders;
+}
+
+function getAllOrders()
+{
+  $connection = connectDB();
+  $sql = 'SELECT orders.orderid, orders.shippingaddress, orders.orderdate,
+            CONCAT(users.fname, \' \', users.lname) AS username, users.userid, users.email 
+          FROM orders
+          INNER JOIN users ON orders.userid = users.userid
+          ORDER BY orders.orderdate DESC';
+  $stmt = $connection->prepare($sql);
   $stmt->execute();
   $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
   $stmt->closeCursor();
