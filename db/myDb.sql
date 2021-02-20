@@ -147,24 +147,23 @@ VALUES (2, 3, 4);
 --   inner join users on orders.userid = users.userid
 --   where users.userid = 2;
 
-SELECT orders.orderid,
-  orders.shippingaddress,
-  orders.orderdate,
-  CONCAT(users.fname, ' ', users.lname) as username
-FROM orders
-  inner join users on orders.userid = users.userid
-where users.userid = 2;
+-- SELECT orders.orderid,
+--   orders.shippingaddress,
+--   orders.orderdate,
+--   CONCAT(users.fname, ' ', users.lname) as username
+-- FROM orders
+--   inner join users on orders.userid = users.userid
+-- where users.userid = 2;
 
-SELECT inventory.name,
-  orderItems.qty,
-  inventory.price
-from orderItems
-  inner join inventory on orderitems.invid = inventory.invid
-WHERE orderItems.orderid = 2;
+-- SELECT inventory.name,
+--   orderItems.qty,
+--   inventory.price
+-- from orderItems
+--   inner join inventory on orderitems.invid = inventory.invid
+-- WHERE orderItems.orderid = 2;
 
-SELECT userid,
-  email,
-  CONCAT(fname, ' ', lname) as username,
-  isadmin
-FROM users;
-
+-- SELECT userid,
+--   email,
+--   CONCAT(fname, ' ', lname) as username,
+--   isadmin
+-- FROM users;
