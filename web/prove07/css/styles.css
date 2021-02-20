@@ -1,0 +1,74 @@
+/*colors: https://coolors.co/a4243b-d8c99b-d8973c-bd632f-273e47*/
+
+body {
+  background-color: #D8C99B;
+  padding-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #D8973C;
+  text-align: center;
+}
+
+.nav {
+  background-color: #D8973C;
+}
+
+.footer p {
+  margin-bottom: 0;
+  color: #273E47;
+}
+
+.container img {
+  max-width: 50%;
+}
+
+.card {
+  margin: 1em;
+  min-width: 18rem;
+  max-width: 20%;
+  text-align: center;
+  padding: 1em;
+  background-color: #273E47;
+  border-radius: 10px;
+  color: #D8973C;
+}
+
+.card img {
+  border-radius: 10px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.login-form {
+  max-width: 25%;
+}
+
+.item-form {
+  display: flex;
+  align-items: flex-end;
+}
+
+th, td {
+  padding: 10px;
+}
+
+.cart tr {
+  border-bottom: #D8973C solid 2px;
+}
+
+.cart tr:last-child {
+  border-bottom: none;
+}
+
+hr {
+  border-color: #D8973C;
+}
